@@ -1,24 +1,24 @@
 /* eslint-disable react/jsx-key */
-import AuthorizedRoute from 'base-shell/lib/components/AuthorizedRoute/AuthorizedRoute'
-import React, { lazy } from 'react'
-import { Route } from 'react-router-dom'
+import AuthorizedRoute from "base-shell/lib/components/AuthorizedRoute/AuthorizedRoute";
+import React, { lazy } from "react";
+import { Route } from "react-router-dom";
 
-const About = lazy(() => import('../pages/About'))
-const Admin = lazy(() => import('../pages/Demo/Admin'))
-const Companies = lazy(() => import('../pages/Demo/Companies'))
-const Company = lazy(() => import('../pages/Demo/Companies/Company'))
-const Tasks = lazy(() => import('../pages/Demo/Tasks'))
-const Task = lazy(() => import('../pages/Demo/Tasks/Task'))
-const FirebaseCols = lazy(() => import('../pages/Firebase/Cols'))
-const FirebaseDocs = lazy(() => import('../pages/Firebase/Docs'))
-const FirebaseLists = lazy(() => import('../pages/Firebase/Lists'))
-const FirebaseMessaging = lazy(() => import('../pages/Firebase/Messaging'))
-const FirebasePaths = lazy(() => import('../pages/Firebase/Paths'))
-const FirebaseStorage = lazy(() => import('../pages/Firebase/Storage'))
-const Dashboard = lazy(() => import('../pages/Dashboard'))
+const About = lazy(() => import("../pages/About"));
+
+const Companies = lazy(() => import("../pages/Clients/Companies"));
+const Company = lazy(() => import("../pages/Clients/Companies/Company"));
+const Tasks = lazy(() => import("../pages/Clients/Tasks"));
+const Task = lazy(() => import("../pages/Clients/Tasks/Task"));
+const FirebaseCols = lazy(() => import("../pages/Firebase/Cols"));
+const FirebaseDocs = lazy(() => import("../pages/Firebase/Docs"));
+const FirebaseLists = lazy(() => import("../pages/Firebase/Lists"));
+const FirebaseMessaging = lazy(() => import("../pages/Firebase/Messaging"));
+const FirebasePaths = lazy(() => import("../pages/Firebase/Paths"));
+const FirebaseStorage = lazy(() => import("../pages/Firebase/Storage"));
+const Dashboard = lazy(() => import("../pages/Dashboard"));
 const GettingStarted = lazy(() =>
-  import('../pages/Documentation/GettingStarted')
-)
+  import("../pages/Documentation/GettingStarted")
+);
 
 const routes = [
   <Route path="/about" exact component={About} />,
@@ -28,7 +28,7 @@ const routes = [
   <AuthorizedRoute path="/firebase_lists" exact component={FirebaseLists} />,
   <AuthorizedRoute path="/firebase_docs" exact component={FirebaseDocs} />,
   <AuthorizedRoute path="/firebase_cols" exact component={FirebaseCols} />,
-  <AuthorizedRoute path="/admin" exact component={Admin} />,
+
   <AuthorizedRoute path="/companies" exact component={Companies} />,
   <AuthorizedRoute path="/companies/:uid" exact component={Company} />,
   <AuthorizedRoute path="/create_company" exact component={Company} />,
@@ -45,6 +45,6 @@ const routes = [
     exact
     component={FirebaseStorage}
   />,
-]
+];
 
-export default routes
+export default routes;

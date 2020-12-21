@@ -1,7 +1,7 @@
 {
   "projects": {
-    "default": "react-most-wanted-dev",
-    "prod": "react-most-wanted-3b1b2",
-    "dev": "react-most-wanted-dev"
+    "default": "myapp-dev-cf316",
+    "prod": "myapp-6a24d",
+    "dev": "myapp-dev-cf316"
   }
 }

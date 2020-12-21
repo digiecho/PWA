@@ -1,15 +1,15 @@
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
-import CountUp from 'react-countup'
-import Days from '../../containers/Reports/Days'
-import Months from '../../containers/Reports/Months'
-import Page from 'material-ui-shell/lib/containers/Page/Page'
-import Providers from '../../containers/Reports/Providers'
-import React, { useEffect } from 'react'
-import Scrollbar from 'material-ui-shell/lib/components/Scrollbar/Scrollbar'
-import Typography from '@material-ui/core/Typography'
-import { useIntl } from 'react-intl'
-import { usePaths } from 'rmw-shell/lib/providers/Firebase/Paths'
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CountUp from "react-countup";
+import Days from "../../containers/Reports/Days";
+import Months from "../../containers/Reports/Months";
+import Page from "material-ui-shell/lib/containers/Page/Page";
+import Providers from "../../containers/Reports/Providers";
+import React, { useEffect } from "react";
+import Scrollbar from "material-ui-shell/lib/components/Scrollbar/Scrollbar";
+import Typography from "@material-ui/core/Typography";
+import { useIntl } from "react-intl";
+import { usePaths } from "rmw-shell/lib/providers/Firebase/Paths";
 
 const ReportContainer = ({ children }) => {
   return (
@@ -18,49 +18,49 @@ const ReportContainer = ({ children }) => {
         minWidth: 300,
         margin: 8,
         flex: 0.45,
-        height: '100%',
+        height: "100%",
       }}
     >
       <Card>
         <CardContent>{children}</CardContent>
       </Card>
     </div>
-  )
-}
+  );
+};
 
 const Dashboard = () => {
-  const intl = useIntl()
-  const { watchPath, getPath, unwatchPath } = usePaths()
-  const users_count = getPath('users_count', 0)
+  const intl = useIntl();
+  const { watchPath, getPath, unwatchPath } = usePaths();
+  const users_count = getPath("users_count", 0);
 
   useEffect(() => {
-    watchPath('users_count')
+    watchPath("users_count");
     return () => {
-      unwatchPath('users_count')
-    }
+      unwatchPath("users_count");
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   return (
     <Page
       pageTitle={intl.formatMessage({
-        id: 'dashboard',
-        defaultMessage: 'Dashboard',
+        id: "dashboard",
+        defaultMessage: "Dashboard",
       })}
     >
       <Scrollbar
         style={{
-          width: '100%',
-          height: '100%',
+          width: "100%",
+          height: "100%",
         }}
       >
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            alignContent: 'stretch',
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            alignContent: "stretch",
           }}
         >
           <Card
@@ -73,18 +73,18 @@ const Dashboard = () => {
             <CardContent>
               <Typography color="textSecondary" variant="h5" gutterBottom>
                 {intl.formatMessage({
-                  id: 'registered_usres',
-                  defaultMessage: 'Registered Users',
+                  id: "registered_usres",
+                  defaultMessage: "Registered Users",
                 })}
               </Typography>
             </CardContent>
             <div
               style={{
-                display: 'flex',
-                width: '100%',
-                height: '70%',
-                alignItems: 'center',
-                justifyContent: 'center',
+                display: "flex",
+                width: "100%",
+                height: "70%",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               <CardContent>
@@ -101,10 +101,10 @@ const Dashboard = () => {
         </div>
         <div
           style={{
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "center",
           }}
         >
           <ReportContainer>
@@ -116,7 +116,7 @@ const Dashboard = () => {
         </div>
       </Scrollbar>
     </Page>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
